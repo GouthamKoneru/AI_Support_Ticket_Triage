@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-support-ticket-triage"
+version = "1.0.0"
+description = "AI-powered support ticket category and priority classification"
+requires-python = ">=3.10"
+dependencies = ["openai>=1.0.0,<4.0.0", "python-dotenv>=1.0.0,<2.0.0"]
+
+[project.scripts]
+triage-tickets = "ticket_triage.cli:main"
+validate-triage = "ticket_triage.validate:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

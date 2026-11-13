@@ -1,0 +1,2 @@
+Subject: Production deployment returns 500 errors
+Our production API is returning HTTP 500 for all customers after today's deployment. Checkout is unavailable. Please investigate urgently.
