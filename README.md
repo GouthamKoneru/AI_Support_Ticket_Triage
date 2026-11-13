@@ -142,7 +142,7 @@ MIT — see [LICENSE](LICENSE).
 
 
 
-\## Project Execution Screenshots
+## Project Execution Screenshots
 
 
 
@@ -150,7 +150,7 @@ The following screenshots demonstrate the successful execution of the AI-powered
 
 
 
-\### 1. AI Ticket Processing
+### 1. AI Ticket Processing
 
 
 
@@ -158,11 +158,11 @@ The DeepSeek model successfully processed all five support tickets and generated
 
 
 
-!\[AI Ticket Processing](Screenshots/tIcket\_processing.png)
+![AI Ticket Processing](Screenshots/ticket_processing.png)
 
 
 
-\### 2. JSON Classification Results
+### 2. JSON Classification Results
 
 
 
@@ -170,11 +170,11 @@ Each ticket was automatically classified into an issue category and assigned a p
 
 
 
-!\[JSON Classification Results](Screenshots/Json\_results.png)
+![JSON Classification Results](Screenshots/Json_results.png)
 
 
 
-\### 3. JSON Validation Results
+### 3. JSON Validation Results
 
 
 
@@ -182,7 +182,7 @@ All five support tickets passed JSON validation, confirming valid categories, pr
 
 
 
-!\[JSON Validation Success](Screenshots/validation\_success.png)
+![JSON Validation Success](Screenshots/validation_success.png)
 
 
 
