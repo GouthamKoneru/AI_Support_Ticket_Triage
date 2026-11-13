@@ -2,20 +2,20 @@
 
 Automatically classify support tickets by **issue category** and **urgency** using a DeepSeek model through an OpenAI-compatible API.
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue) ![Tests](https://img.shields.io/badge/Tests-pytest-green) ![License](https://img.shields.io/badge/License-MIT-lightgrey)
+!\[Python](https://img.shields.io/badge/Python-3.10%2B-blue) !\[Tests](https://img.shields.io/badge/Tests-pytest-green) !\[License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ## Overview
 
 Customer support teams receive many requests. This CLI reads every `.txt` ticket, sends its contents to an AI model, validates the returned classification, and saves one machine-readable `.json` record per ticket.
 
-**Pipeline:** `tickets/*.txt` → AI classification → JSON validation → `triaged/*.json`
+**Pipeline:** `tickets/\*.txt` → AI classification → JSON validation → `triaged/\*.json`
 
 ### Supported labels
 
-| Field | Allowed values |
-| --- | --- |
-| `category` | `billing`, `technical`, `account`, `other` |
-| `priority` | `low`, `medium`, `high` |
+|Field|Allowed values|
+|-|-|
+|`category`|`billing`, `technical`, `account`, `other`|
+|`priority`|`low`, `medium`, `high`|
 
 ### Example
 
@@ -36,29 +36,29 @@ Illustrative output: `triaged/deploy-500.json`
 
 ## Features
 
-- Batch-processes all `.txt` tickets
-- Strictly checks category and priority against allowed values
-- Writes formatted JSON with the same base filename
-- Handles individual ticket errors without stopping the whole batch
-- Uses environment variables rather than hardcoded credentials
-- Works with local folders or `/root/tickets` on the lab VM
-- Includes unit tests and GitHub Actions CI
+* Batch-processes all `.txt` tickets
+* Strictly checks category and priority against allowed values
+* Writes formatted JSON with the same base filename
+* Handles individual ticket errors without stopping the whole batch
+* Uses environment variables rather than hardcoded credentials
+* Works with local folders or `/root/tickets` on the lab VM
+* Includes unit tests and GitHub Actions CI
 
 ## Quick start
 
 Requires Python 3.10+.
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ai-support-ticket-triage.git
+git clone https://github.com/YOUR\_USERNAME/ai-support-ticket-triage.git
 cd ai-support-ticket-triage
 python3 -m venv .venv
-source .venv/bin/activate  # Windows PowerShell: .venv\\Scripts\\Activate.ps1
+source .venv/bin/activate  # Windows PowerShell: .venv\\\\Scripts\\\\Activate.ps1
 pip install -e . -r requirements-dev.txt
 ```
 
-The lab VM already provides `OPENAI_API_KEY` and `OPENAI_BASE_URL`. On your own machine, copy `.env.example` to `.env` and fill in the actual credentials and provider endpoint. **Never commit `.env` or API keys.**
+The lab VM already provides `OPENAI\_API\_KEY` and `OPENAI\_BASE\_URL`. On your own machine, copy `.env.example` to `.env` and fill in the actual credentials and provider endpoint. **Never commit `.env` or API keys.**
 
-> **Model compatibility:** `deepseek-v4-flash` is a configurable placeholder based on the chosen model name, not a verified provider model ID. Set `MODEL_NAME` to the exact model identifier supported by your endpoint if different. The endpoint must support OpenAI-compatible Chat Completions.
+> \*\*Model compatibility:\*\* `deepseek-v4-flash` is a configurable placeholder based on the chosen model name, not a verified provider model ID. Set `MODEL\_NAME` to the exact model identifier supported by your endpoint if different. The endpoint must support OpenAI-compatible Chat Completions.
 
 ### Run locally
 
@@ -70,8 +70,8 @@ validate-triage --input tickets --output triaged
 Or without installing the CLI entry points:
 
 ```bash
-python -m ticket_triage.cli --input tickets --output triaged
-python -m ticket_triage.validate --input tickets --output triaged
+python -m ticket\_triage.cli --input tickets --output triaged
+python -m ticket\_triage.validate --input tickets --output triaged
 ```
 
 ### Run on the lab VM
@@ -92,7 +92,7 @@ validate-triage --input /root/tickets --output /root/triaged
 Optional JSON check using `jq`:
 
 ```bash
-for f in /root/triaged/*.json; do jq -e '.category and .priority' "$f"; done
+for f in /root/triaged/\*.json; do jq -e '.category and .priority' "$f"; done
 ```
 
 ## Tests
@@ -108,12 +108,12 @@ Tests use a fake API client; no real API key, network connection, or paid model 
 ```text
 ai-support-ticket-triage/
 ├── .github/workflows/tests.yml
-├── src/ticket_triage/
-│   ├── __init__.py
+├── src/ticket\_triage/
+│   ├── \_\_init\_\_.py
 │   ├── cli.py
 │   ├── core.py
 │   └── validate.py
-├── tests/test_core.py
+├── tests/test\_core.py
 ├── tickets/                   # Synthetic demonstration tickets
 ├── triaged/                   # Illustrative JSON records
 ├── .env.example
@@ -135,3 +135,62 @@ Do not publish real customer tickets, secrets, or private account data. The incl
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+
+
+
+
+\## Project Execution Screenshots
+
+
+
+The following screenshots demonstrate the successful execution
+
+of the AI-powered support ticket triage system.
+
+
+
+\### 1. AI Ticket Processing
+
+
+
+The DeepSeek model successfully processed all five support
+
+tickets and generated individual JSON classification files.
+
+
+
+!\[AI Ticket Processing](screenshots/ticket\_processing.png)
+
+
+
+\### 2. JSON Classification Results
+
+
+
+Each ticket is automatically classified into an issue
+
+category and priority level.
+
+
+
+!\[JSON Classification Results](screenshots/json\_results.png)
+
+
+
+\### 3. JSON Validation Results
+
+
+
+All five support tickets passed JSON validation,
+
+confirming valid categories, priorities, and matching
+
+output files.
+
+
+
+!\[JSON Validation Success](screenshots/validation\_success.png)
+
+
+
