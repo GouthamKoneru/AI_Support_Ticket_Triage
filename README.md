@@ -139,50 +139,24 @@ MIT — see [LICENSE](LICENSE).
 
 
 
-
-
-
 ## Project Execution Screenshots
-
-
 
 The following screenshots demonstrate the successful execution of the AI-powered Support Ticket Triage system using DeepSeek.
 
-
-
 ### 1. AI Ticket Processing
-
-
 
 The DeepSeek model successfully processed all five support tickets and generated individual JSON classification files.
 
-
-
-![AI Ticket Processing](Screenshots/ticket_processing.png)
-
-
+![AI Ticket Processing](Screenshots/tIcket_processing.png)
 
 ### 2. JSON Classification Results
 
-
-
 Each ticket was automatically classified into an issue category and assigned a priority level.
-
-
 
 ![JSON Classification Results](Screenshots/Json_results.png)
 
-
-
 ### 3. JSON Validation Results
-
-
 
 All five support tickets passed JSON validation, confirming valid categories, priorities, and matching output files.
 
-
-
 ![JSON Validation Success](Screenshots/validation_success.png)
-
-
-
